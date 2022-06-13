@@ -6,7 +6,7 @@ const path = require('path');
 
 //
 const userRoutes = require('./server/routes/user');
-//
+// ok
 const postRoutes = require('./server/routes/post');
 
 mongoose.connect(process.env.dbURL)
