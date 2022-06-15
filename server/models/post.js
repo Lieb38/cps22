@@ -37,7 +37,8 @@ async function read(userId, id) {
 }
 
 // update post
-async function updatePost(id, content) {
+async function updatePost(userId, id, content) {
+    if(userId != this.userId) throw Error('cannot alter other posts');
     const post = await Post.updateOne({"_id": id}, {$set: {content: content}});
     return post;
 }
