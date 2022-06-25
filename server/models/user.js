@@ -1,3 +1,6 @@
+//bcrypt.js
+const bcrypt = require('bcryptjs');
+
 // import mongoose
 const mongoose = require("mongoose");
 
@@ -18,20 +21,26 @@ async function register(username, password) {
     const user = await getUser(username);
     if(user) throw Error('username already in use');
 
+    const salt = await bcrypt.genSalt(10);
+    const hashed = await bcrypt.hash(password, salt);
+
     const newUser = await User.create({
         username: username,
-        password: password
+        password: hashed
     });
 
-    return newUser;
+    
+    return newUser._doc;
 }
 // read user (logging in)
 async function login(username, password) {
     const user = await getUser(username);
     if(!user) throw Error('User not found');
-    if(user.password != password) throw Error('Wrong password');
 
-    return user;
+    const isMatch = await bcrypt.compare(password, user.password);
+    if(!isMatch) throw Error('Wrong password');
+
+    return user._doc;
 }
 
 // update password
