@@ -1,5 +1,12 @@
+
+
 .App {
   text-align: center;
+  background-color: rgb(142 205 140);
+  font-family: 'Source Serif Pro', serif;
+  letter-spacing: 0.05em;
+  color: orangered;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .App-logo {
@@ -35,4 +42,40 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Nav Bar */
+
+.navbar {
+  background-color: orangered;
+  border-bottom: solid 1px black;
+  text-shadow: none;
+}
+
+.navbar-light .navbar-brand {
+  color: rgba(31, 117, 192, 0.9);
+}
+.navbar-toggler:hover {
+  box-shadow: 0 0 10px 10px red;
+}
+
+/* About */
+.about {
+  color: black;
+  text-shadow: none;
+  margin-top: 1em;
+  margin-bottom: 4em;
+}
+
+/* Login Form */
+/* h1 {
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+} */
+.login, .register {
+  border: solid 1px rgb(227 123 45 / 23%);
+  border-radius: 5px;
+  background-color: rgb(150 179 232);
+  box-shadow: 0px 0px 40px 20px rgb(151 173 242);
+  text-shadow: none;
 }
