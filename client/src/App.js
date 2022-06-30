@@ -1,10 +1,10 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import NavBar from './components/pages/NavBar';
-import Profile from './components/pages/Profile';
-import Register from './components/RegisterForm';
-import Login from './components/LoginForm';
-import About from './components/About';
+import NavBar from './components/NavBar';
+import Profile from './components/Profile.js';
+import Register from './components/RegisterForm.js';
+import Login from './components/LoginForm.js';
+import About from './components/About.js';
 
 function App() {
   return (
@@ -19,11 +19,6 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-      {/* <NavBar /> */}
-      <About />
-      <Login />
-      <Register />
-      <label htmlFor=""></label>
     </div>
   );
 }
