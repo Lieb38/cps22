@@ -1,4 +1,4 @@
-export async function detchdata(route = '', data = {}, methodType) {
+export async function fetchData(route = '', data = {}, methodType) {
     const response = await fetch(`http://localhost:5000${route}`, {
         mothod: methodType, /// get, post, put, delete, etc.
         headers: {
