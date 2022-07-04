@@ -85,7 +85,7 @@ const Profile = () => {
                  <button type="submit" className="btn my-4">Post</button>
                 </form>
             </div>
-{/* posts section */}
+                {/* posts section */}
             <div className="postsSection" id="postsSection">
                 {/* <form className="">
 
