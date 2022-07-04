@@ -28,6 +28,15 @@ async function create(userId, content) {
 }
 
 // read post
+async function getAll(userId) {
+    const posts = getPosts(userId)
+    //await Post.findOne({userId: userId}, {"_id": id});
+    if(!posts) throw Error('Post not found');
+
+    return posts;
+}
+
+// read post
 async function read(userId, id) {
     const post = getPost(id);
     //await Post.findOne({userId: userId}, {"_id": id});
@@ -56,5 +65,10 @@ async function getPost(id) {
     return await Post.findOne({"_id": id});
 }
 
+async function getPosts(userId) {
+
+    return await Post.find({});
+}
+
 // export functions for routes access
-module.exports = {create, read, updatePost, deletePost};
+module.exports = {create, read, updatePost, deletePost, getAll, getPosts};

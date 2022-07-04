@@ -23,6 +23,15 @@ router
         }
     })
 
+    .get('/getAll', async (req, res) => {
+        try {
+            const post = await Post.getPosts(req.body.userId);
+            res.send(post);
+        } catch(error) {
+            res.status(401).send({message: error.message});
+        }
+    })
+
     .put('/update', async (req, res) => {
         try {
             const post = await Post.updatePost(req.body.id, req.body.content);

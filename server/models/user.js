@@ -28,10 +28,10 @@ async function register(username, password) {
         username: username,
         password: hashed
     });
-
-    
     return newUser._doc;
+
 }
+
 // read user (logging in)
 async function login(username, password) {
     const user = await getUser(username);
@@ -40,7 +40,9 @@ async function login(username, password) {
     const isMatch = await bcrypt.compare(password, user.password);
     if(!isMatch) throw Error('Wrong password');
 
+    console.log(user._doc);
     return user._doc;
+
 }
 
 // update password
@@ -60,5 +62,6 @@ async function getUser(username) {
     return await User.findOne({"username": username});
 }
 
+
 // export functions for routes access
-module.exports = {register, login, updatePassword, deleteUser};
+module.exports = {register, login, updatePassword, deleteUser, getUser};
