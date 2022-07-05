@@ -1,5 +1,5 @@
 import { fetchData } from "../../main";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Register = () => {
