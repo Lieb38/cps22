@@ -48,14 +48,14 @@ const deleteMe = (e, _id) => {
 
                 {posts.map(post => {
                     return(
-                        // <div key={post._id} id={`postContainer ${post._id}`} className='postContainer'>
-                        //   <form className="Posties" onSubmit={(e) => deleteMe(e,post._id)}>
-                        //     {/* onClick={() => deleteMe(post._id)} */}
-                        //     <h1 className="postyContent">{post.content}</h1>
-                        //     <h2>{user.username}</h2>
-                        //     <button type="submit" className="btn"  id='DeleteME' >Delete</button>
-                        //   </form>
-                        // </div>
+                        <div key={post._id} id={`postContainer ${post._id}`} className='postContainer'>
+                          <form className="Posties" onSubmit={(e) => deleteMe(e,post._id)}>
+                            {/* onClick={() => deleteMe(post._id)} */}
+                            <h1 className="postyContent">{post.content}</h1>
+                            <h2>{user.username}</h2>
+                            <button type="submit" className="btn"  id='DeleteME' >Delete</button>
+                          </form>
+                        </div>
                     )}
                 )}
       </div>
