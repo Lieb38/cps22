@@ -7,6 +7,7 @@ const postSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref:'User'
     },
+    username: String,
     content: String,
     likes: Number
 })
@@ -18,10 +19,11 @@ const Post = mongoose.model("Post", postSchema);
 // CRUD functions on model
 
 // create a post
-async function create(userId, content) {
+async function create(userId, username, content) {
 
     const newPost = await Post.create({
         userId: userId,
+        username: username,
         content: content,
     });
     return newPost;
@@ -65,9 +67,9 @@ async function getPost(id) {
     return await Post.findOne({"_id": id});
 }
 
-async function getPosts(userId) {
+async function getPosts() {
 
-    return await Post.find({});
+    return await Post.find();
 }
 
 // export functions for routes access

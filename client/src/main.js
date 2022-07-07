@@ -12,3 +12,33 @@ export async function fetchData(route ='', data={}, methodType) {
         throw await response.json();
     }
 }
+
+export async function allPosts() {
+    await fetch("http://localhost:5000/post/getPosts")
+    .then((response) => {
+    return response.json();
+    })
+
+}
+
+export const getPosts = async () => {
+    await fetch("http://localhost:5000/post/getPosts", {
+        method: 'GET',
+        headers: {
+        "Accept": "application/json",
+        'Content-Type': 'application/json'
+        }
+    })
+    .then(response => { return response.json();})
+    .then(responseData => {console.log(responseData); return responseData;})
+    //.then(data => {this.setState({"questions" : data});})
+
+    .catch(err => {
+        console.log("fetch error" + err);
+    });
+}
+
+
+
+
+

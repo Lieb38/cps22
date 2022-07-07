@@ -1,19 +1,15 @@
 import { fetchData } from "../../main";
-import { useState, useContext } from "react";
+import { useState, fragment, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import UserContext from "../../context/userContext";
 
 const Register = () => {
     const navigate = useNavigate();
+    const {user, updateUser} = useContext(UserContext);
 
-    const [user, setUser] = useState ({
-        username: '',
-        password: '',
-        password2: ''
-    });
-    // destructuring
     const { username, password, password2 } = user;
 
-    const onChange = (e) => setUser({...user, [e.target.name]: e.target.value})
+    const onChange = (e) => updateUser(e.target.name, e.target.value)
    
     const onSubmit = (e) => {
         e.preventDefault();

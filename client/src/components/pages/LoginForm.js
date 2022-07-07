@@ -1,17 +1,19 @@
 import { fetchData } from "../../main";
-import { useState } from "react";
+import { useState, useContext, fragment } from "react";
 import { useNavigate } from "react-router-dom";
+import UserContext from "../../context/userContext";
 
 const Login = () => {
   const navigate = useNavigate();
 
-  const [user, setUser] = useState ({
-    username: '',
-    password: ''
-  });
+  const {user, updateUser} = useContext(UserContext);
+  // const [user, setUser] = useState ({
+  //   username: '',
+  //   password: ''
+  // });
 
   const { username, password} = user;
-  const onChange = (e) => setUser({...user, [e.target.name]: e.target.value})
+  const onChange = (e) => updateUser(e.target.name, e.target.value)
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -25,7 +27,7 @@ const Login = () => {
         if(!data.message) {
           navigate("/profile", { state: data });
           console.log(data)
-
+          updateUser("authenticated", true)
           console.log(`success!!"`)
         }
       })

@@ -7,14 +7,14 @@ const router = express.Router();
 router
     .post('/create', async (req, res) => {
         try {
-            const post = await Post.create(req.body.userId, req.body.content);
+            const post = await Post.create(req.body.userId, req.body.username, req.body.content);
             res.send(post);
         } catch(error) {
             res.status(401).send({message: error.message});
         }
     })
 
-    .get('/read', async (req, res) => {
+    .post('/read', async (req, res) => {
         try {
             const post = await Post.read(req.body.userId, req.body.id);
             res.send(post);
@@ -23,9 +23,9 @@ router
         }
     })
 
-    .get('/getAll', async (req, res) => {
+    .get('/getPosts', async (req, res) => {
         try {
-            const post = await Post.getPosts(req.body.userId);
+            const post = await Post.getPosts();
             res.send(post);
         } catch(error) {
             res.status(401).send({message: error.message});
@@ -43,12 +43,11 @@ router
 
     .delete('/delete', async (req, res) => {
         try {
-            await Post.deletePost(req.body.id);
-            console.log("post deleted");
-            res.send({success: "Post deleted"});
+          await Post.deletePost(req.body.id);
+          res.send({ success: "Post deleted" });
         } catch(error) {
-            res.status(401).send({message: error.message});
+          res.status(401).send({ message: error.message });
         }
-    })
+      })
 
 module.exports = router;

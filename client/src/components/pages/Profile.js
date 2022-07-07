@@ -1,43 +1,34 @@
-import { fetchData } from "../../main";
-import { useState } from "react";
+import { fetchData, allPosts, getPosts } from "../../main";
+import { useState, useEffect, useContext, createContext } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import Posts from "./Posts";
+import UserContext from "../../context/userContext";
+// import {Posts} from "./Posts";
+
 
 const Profile = () => {
+    const {user} = useContext(UserContext);
     const { state } = useLocation();
-    const userName = state.username;
-    const userId = state._id;
+    const userName = user.username;
+    const userId = user._id;
 
-    const [post, setPost] = useState ({
-        content: ''
-    });
-    // destructuring
-    const { content } = post;
-
-    const onChange = (e) => setPost({...post, [e.target.name]: e.target.value})
-   
     const createPost = () => {
         const newPost = document.getElementById('postsSection');
+        //let posties = document.createElement('h1');
+        //posties.innerHTML = (Posts)
         let textBox = document.createElement('h3');
         textBox.innerHTML = (`${userName} says: ${content}`)
         newPost.appendChild(textBox);
     }
 
-    window.onload = function allPosts() {
+    const [post, setPost] = useState ({
+        username: userName,
+        content: ''
+    });
+    // destructuring
+    const { username, content } = post;
 
-        fetchData('/post/getAll',
-        {
-            userId
-        },
-        "GET")
-        .then((data) => {
-            if(!data.message) {
-                console.log(data)
-            }
-        })
-        .catch((error) => {
-            console.log(`Error! ${error.message}`)
-        })
-    }
+    const onChange = (e) => setPost({...post, [e.target.name]: e.target.value})
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -45,6 +36,7 @@ const Profile = () => {
         fetchData('/post/create', 
           {
             userId,
+            userName,
             content
           }, 
         "POST")
@@ -58,7 +50,6 @@ const Profile = () => {
             console.log(`Error! ${error.message}`)
         })
     }
-
 
     return(
         <div className="profile">
@@ -85,15 +76,10 @@ const Profile = () => {
                  <button type="submit" className="btn my-4">Post</button>
                 </form>
             </div>
-                {/* posts section */}
-            <div className="postsSection" id="postsSection">
-                {/* <form className="">
-
-                </form> */}
-            
-            </div>
-            <div className="allposts" id="allposts">
-            </div>
+                <div>
+                <Posts></Posts>
+                </div>
+                
 
         </div>
         

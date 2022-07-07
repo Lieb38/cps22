@@ -1,27 +1,67 @@
 // profile, login, register
 import { Outlet, Link } from "react-router-dom";
+import { useState, useContext, Fragment } from "react";
+import UserContext from "../../context/userContext";
 
 const NavBar = () => {
+  const { user } = useContext(UserContext)
+ 
+  const authenticated = (
+    <Fragment>
+       <h2>hi,  {user.username}</h2>
+    </Fragment>
+  )
+
+  const guest = (
+    <Fragment>
+      <h2>welcome</h2>
+    </Fragment>
+  
+  )
+
+  const authenticated2 = (
+    <Fragment>
+      <li className="nav-item">
+        <Link className="nav-link active" aria-current="page" to="/profile">Profile</Link>
+      </li>
+    </Fragment>
+  )
+
+  const guest2 = (
+    <Fragment>
+      <li className="nav-item">
+        <Link className="nav-link" to="/Login">Log in</Link>
+      </li>
+      <li className="nav-item">
+          <Link className="nav-link" to="/Register">Register</Link>
+      </li>
+
+    </Fragment>
+  )
+
     return(
         <div>
           <nav className="navbar navbar-expand-lg navbar-light">
             <div className="container-fluid">
+              {user.authenticated ? authenticated : guest }
               <Link className="navbar-brand" to="/">LiebSpace</Link>
               <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
               </button>
               <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li className="nav-item">
+                
+                  {user.authenticated ? authenticated2 : guest2}
+                  {/* <li className="nav-item">
                     <Link className="nav-link active" aria-current="page" to="/profile">Profile</Link>
-                  </li>
-                  <li className="nav-item">
+                  </li> */}
+                  {/* <li className="nav-item">
                     <Link className="nav-link" to="/Login">Log in</Link>
                   </li>
                   <li className="nav-item">
                     <Link className="nav-link" to="/Register">Register</Link>
-                  </li>
-                  <li className="nav-item dropdown">
+                  </li> */}
+                  {/* <li className="nav-item dropdown">
                     <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Dropdown
                     </a>
@@ -31,7 +71,7 @@ const NavBar = () => {
                       <li><hr className="dropdown-divider"/></li>
                       <li><a className="dropdown-item" href="#">Something else here</a></li>
                     </ul>
-                  </li>
+                  </li> */}
                   
                 </ul>
                 <form className="d-flex">
