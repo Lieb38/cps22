@@ -75,14 +75,14 @@ useEffect(() => {
 
 
                     return(
-                        <div key={post._id} id={`postContainer`} className='postContainer'>
-                          <form className="Posties" onSubmit={deleteMe}>
-                            {/* onClick={() => deleteMe(post._id)} */}
-                            <h1 className="postyContent">{post.content}</h1>
-                            <h2>{user.username}</h2>
-                            <button type="submit" className="btn"  id='DeleteME' >Delete</button>
-                          </form>
-                        </div>
+                        // <div key={post._id} id={`postContainer`} className='postContainer'>
+                        //   <form className="Posties" onSubmit={deleteMe}>
+                        //     {/* onClick={() => deleteMe(post._id)} */}
+                        //     <h1 className="postyContent">{post.content}</h1>
+                        //     <h2>{user.username}</h2>
+                        //     <button type="submit" className="btn"  id='DeleteME' >Delete</button>
+                        //   </form>
+                        // </div>
                     )}
                 )}
       </div>
