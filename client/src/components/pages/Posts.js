@@ -13,7 +13,7 @@ export const Posts = () => {
 
 
 useEffect(() => {
-  fetch("http://localhost:5000/post/getPosts")
+  fetch("/post/getPosts") // http://localhost:5000
   .then(response => response.json())
   .then(data => setPosts(data))
 },[])
@@ -38,7 +38,7 @@ const deleteMe = (e, _id) => {
       })
 
 
-    //   fetch("http://localhost:5000/post/getPosts")
+    //   fetch("/getPosts") // http://localhost:5000/post
     // .then(response => response.json())
     // .then(data => setPosts(data))
 }
