@@ -1,12 +1,11 @@
 html {
-  /* background-color: orangered; */
-  background-color: rgb(142 205 140);
+  background-color: orangered;
 }
 
 .App {
   text-align: center;
-  /* background-color: orangered; */
-  background-color: rgb(142 205 140);
+  background-color: orangered;
+  /* background-color: rgb(142 205 140); */
   
   font-family: 'Source Serif Pro', serif;
   letter-spacing: 0.05em;
@@ -52,8 +51,7 @@ html {
 /* Nav Bar */
 
 .navbar {
-  /* background-color: orangered; */
-  background-color: rgb(142 205 140);
+  background-color: orangered;
   border-bottom: solid 1px black;
   text-shadow: none;
 }
