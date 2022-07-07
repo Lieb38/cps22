@@ -18,35 +18,63 @@ useEffect(() => {
   .then(data => setPosts(data))
 },[])
 
-const deleteMe = (e, _id) => {
-  e.preventDefault();
+// const deleteMe = (e, _id) => {
+//   e.preventDefault();
 
-  fetchData('/post/delete', 
-        {
-        _id: _id
-        }, 
-      "DELETE")
-      .then((data) => {
-          if(!data.message) {
-              console.log(_id)
-              console.log(data)
-              // console.log(`success!!"`)
-          }
-      })
-      .catch((error) => {
-          console.log(`Error! ${error.message}`)
-      })
+//   fetchData('/post/delete', 
+//         {
+//         _id: _id
+//         }, 
+//       "DELETE")
+//       .then((data) => {
+//           if(!data.message) {
+//               console.log(_id)
+//               console.log(data)
+//               // console.log(`success!!"`)
+//           }
+//       })
+//       .catch((error) => {
+//           console.log(`Error! ${error.message}`)
+//       })
 
 
-    //   fetch("/getPosts") // http://localhost:5000/post
-    // .then(response => response.json())
-    // .then(data => setPosts(data))
-}
+//     //   fetch("/getPosts") // http://localhost:5000/post
+//     // .then(response => response.json())
+//     // .then(data => setPosts(data))
+// }
 
     return(
       <div className="postsSection" id="postsSection">
 
                 {posts.map(post => {
+                  
+                  const deleteMe = (e, _id) => {
+                    e.preventDefault();
+                  
+                    fetchData('/post/delete', 
+                          {
+                          _id: _id
+                          }, 
+                        "DELETE")
+                        .then((data) => {
+                            if(!data.message) {
+                                console.log(_id)
+                                console.log(data)
+                                // console.log(`success!!"`)
+                            }
+                        })
+                        .catch((error) => {
+                            console.log(`Error! ${error.message}`)
+                        })
+                  
+                  
+                      //   fetch("/getPosts") // http://localhost:5000/post
+                      // .then(response => response.json())
+                      // .then(data => setPosts(data))
+                  }
+
+
+
                     return(
                         <div key={post._id} id={`postContainer ${post._id}`} className='postContainer'>
                           <form className="Posties" onSubmit={(e) => deleteMe(e,post._id)}>
