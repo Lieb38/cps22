@@ -4,8 +4,8 @@ html {
 
 .App {
   text-align: center;
-  background-color: orangered;
-  /* background-color: rgb(142 205 140); */
+  /* background-color: orangered; */
+  background-color: rgb(142 205 140);
   
   font-family: 'Source Serif Pro', serif;
   letter-spacing: 0.05em;
