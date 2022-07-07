@@ -5,6 +5,7 @@ import UserContext from "../../context/userContext";
 
 const Register = () => {
     const navigate = useNavigate();
+
     const {user, updateUser} = useContext(UserContext);
 
     const { username, password, password2 } = user;
@@ -24,6 +25,7 @@ const Register = () => {
             if(!data.message) {
                 navigate("/profile", { state: data });
                 console.log(data)
+                updateUser("authenticated", true)
                 console.log(`success!!"`)
             }
         })

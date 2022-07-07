@@ -15,7 +15,7 @@ mongoose.connect(process.env.dbURL)
 
 app.use(express.json());
 
-app.use(express.static(__dirname + "/client/build")); // /public
+app.use(express.static(__dirname + "/client/build")); // /public ///client/build
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, '/client/build', 'index.html'))); // /public
 
 

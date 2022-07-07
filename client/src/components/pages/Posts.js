@@ -5,9 +5,9 @@ import { useState, useEffect, useContext, createContext } from "react";
 import UserContext from "../../context/userContext";
 
 export const Posts = () => {
-  const {user} = useContext(UserContext);
+  const {user, updateUser} = useContext(UserContext);
 
-
+  updateUser(user.username, user.username)
 
   const [posts, setPosts] = useState([]);
 
@@ -31,6 +31,7 @@ const deleteMe = (e, _id) => {
               console.log(_id)
               console.log(data)
               // console.log(`success!!"`)
+              updateUser("authenticated", true)
           }
       })
       .catch((error) => {
