@@ -1,5 +1,5 @@
 export async function fetchData(route ='', data={}, methodType) {
-    const response = await fetch(`http://localhost:5000${route}`, {
+    const response = await fetch(`${route}`, { //http://localhost:5000
         method: methodType, /// get, post, put, delete, etc.
         headers: {
             'Content-Type': 'application/json'
@@ -14,7 +14,7 @@ export async function fetchData(route ='', data={}, methodType) {
 }
 
 export async function allPosts() {
-    await fetch("http://localhost:5000/post/getPosts")
+    await fetch("/post/getPosts") //http://localhost:5000
     .then((response) => {
     return response.json();
     })
@@ -22,7 +22,7 @@ export async function allPosts() {
 }
 
 export const getPosts = async () => {
-    await fetch("http://localhost:5000/post/getPosts", {
+    await fetch("/post/getPosts", { // http://localhost:5000
         method: 'GET',
         headers: {
         "Accept": "application/json",
