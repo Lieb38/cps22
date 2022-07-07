@@ -47,13 +47,12 @@ useEffect(() => {
       <div className="postsSection" id="postsSection">
 
                 {posts.map(post => {
-                  
-                  const deleteMe = (e, _id) => {
+                  const deleteMe = (e) => {
                     e.preventDefault();
                   
                     fetchData('/post/delete', 
                           {
-                          _id: _id
+                          post._id
                           }, 
                         "DELETE")
                         .then((data) => {
@@ -76,8 +75,8 @@ useEffect(() => {
 
 
                     return(
-                        <div key={post._id} id={`postContainer ${post._id}`} className='postContainer'>
-                          <form className="Posties" onSubmit={(e) => deleteMe(e,post._id)}>
+                        <div key={post._id} id={`postContainer`} className='postContainer'>
+                          <form className="Posties" onSubmit={deleteMe}>
                             {/* onClick={() => deleteMe(post._id)} */}
                             <h1 className="postyContent">{post.content}</h1>
                             <h2>{user.username}</h2>
