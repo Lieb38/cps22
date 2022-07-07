@@ -23,7 +23,7 @@ const deleteMe = (e, _id) => {
 
   fetchData('/post/delete', 
         {
-        _id
+        _id: _id
         }, 
       "DELETE")
       .then((data) => {
