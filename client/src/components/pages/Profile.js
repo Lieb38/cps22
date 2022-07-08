@@ -39,14 +39,15 @@ const Profile = () => {
 
         fetchData('/post/create', 
           {
-            userId,
-            userName,
-            content
+            userId: userId,
+            username: userName,
+            content: content
           }, 
         "POST")
         .then((data) => {
             if(!data.message) {
                 console.log(data)
+                console.log(userId, userName, content)
                 // createPost()
             }
         })
