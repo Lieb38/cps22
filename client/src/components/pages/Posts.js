@@ -5,7 +5,7 @@ import UserContext from "../../context/userContext";
 
 export const Posts = () => {
   const {user} = useContext(UserContext);
-  const signedUser = user.username;
+  const signedUser = user.userId;
 
 
   const [posts, setPosts] = useState([]);
