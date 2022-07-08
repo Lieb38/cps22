@@ -62,9 +62,9 @@ const Profile = () => {
             {/* <h1>HI!!! {userName}! </h1> */}
             <hr />
             <div className="container">
-                <form className="profileForm" onSubmit={onSubmit}>
+                <form className="profileForm mx-4 my-5" onSubmit={onSubmit}>
                     <h1>What's up?</h1>
-                <div className="mx-4 my-4">
+                <div className="mx-4 my-5">
                    <label htmlFor="post" className="form-label">tell us</label>
                    <input 
                       type="text" 

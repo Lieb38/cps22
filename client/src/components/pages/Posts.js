@@ -37,7 +37,7 @@ useEffect(() => {
 
           return(
                 <div key={post._id} id={`postContainer`} className='postContainer'>
-                  <form className="postForm" onSubmit={deleteMe}>
+                  <form className="postForm mx-4 my-5" onSubmit={deleteMe}>
                     {/* <h1>{user.username}</h1> */}
                     {/* onClick={() => deleteMe(post._id)} */}
                     {/* onSubmit={(e) => deleteMe(e,post._id)} */}

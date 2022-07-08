@@ -121,11 +121,6 @@ html {
 /* posts form */
 
 .postForm {
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  width: 40%;
-  max-width: 300px;
   padding-top: 1em;
   padding-bottom: 1em;
   margin: 1em;
