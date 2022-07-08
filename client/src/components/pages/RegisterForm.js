@@ -45,7 +45,7 @@ const Register = () => {
             <div className="container">
                 <form className="register mx-auto my-4" onSubmit={onSubmit}>
                     <h1>Register</h1>
-                <div className="non">
+                <div className="mx-4 my-4">
                    <label htmlFor="username" className="form-label">Username</label>
                    <input 
                       type="text" 
@@ -58,7 +58,7 @@ const Register = () => {
                     />
                    {/* <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div> */}
                  </div>
-                 <div className="non">
+                 <div className="mx-4 my-4">
                    <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
                    <input 
                       type="password" 
@@ -70,7 +70,7 @@ const Register = () => {
                       required
                     />
                  </div>
-                 <div className="non">
+                 <div className="mx-4 my-4">
                    <label htmlFor="password2" className="form-label">Password check</label>
                    <input 
                       type="password" 
