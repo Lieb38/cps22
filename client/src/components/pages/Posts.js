@@ -40,7 +40,7 @@ useEffect(() => {
                 <div key={post._id} id={`postContainer`} className='postContainer'>
                   <form className="postForm mx-auto my-4" onSubmit={deleteMe}>
                     <h2 className="postyContent">{post.username} says {post.content}</h2>
-                    <button type="submit" className="deletebtn" id='DeleteME' >Delete</button>
+                    <button type="submit" className="btn" id='DeleteME' >Delete</button>
                   </form>
                 </div>
           ) }

@@ -141,7 +141,7 @@ html {
   text-shadow: 0 0 20px rgba(0, 0, 0, 0.558);
 }
 
-.postForm.btn {
+.postForm.btn-outline-danger {
   /* background-color: rgba(177, 213, 168, 0); */
   border: solid 1px rgb(151, 55, 55);
   text-shadow: 0 0 10px rgb(151, 55, 55);
