@@ -8,13 +8,15 @@ const NavBar = () => {
  
   const authenticated = (
     <Fragment>
-       <h2>hi, {user.username}       </h2>
+       <h2>hi, </h2>
+       <h2>{user.username}</h2>
     </Fragment>
   )
 
   const guest = (
     <Fragment>
-      <h2>welcome     </h2>
+      <h2>welcome</h2>
+      <h2> </h2>
     </Fragment>
   
   )
