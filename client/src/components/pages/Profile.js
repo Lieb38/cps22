@@ -35,8 +35,8 @@ const Profile = () => {
     const onChange = (e) => setPost({...post, [e.target.name]: e.target.value})
 
 
-    const onSubmit = () => {
-        // e.preventDefault();
+    const onSubmit = (e) => {
+        e.preventDefault();
 
         fetchData('/post/create', 
         {
