@@ -22,15 +22,11 @@ useEffect(() => {
           const deleteMe = (e) => {
             e.preventDefault();
           
-            fetchData('/post/delete', 
-              {
-                id: post._id
-              }, 
-            "DELETE")
+            fetchData('/post/delete', { id: post._id }, "DELETE")
             .then((data) => {
                 if(!data.message) {
-                    console.log(post._id)
-                    console.log(data)
+                    // console.log(post._id)
+                    // console.log(data)
                     setPosts(posts)
                 }
             })
@@ -41,11 +37,12 @@ useEffect(() => {
 
           return(
                 <div key={post._id} id={`postContainer`} className='postContainer'>
-                  <form className="Posties" onSubmit={deleteMe}>
+                  <form className="postForm" onSubmit={deleteMe}>
+                    <h1>{user.username}</h1>
                     {/* onClick={() => deleteMe(post._id)} */}
                     {/* onSubmit={(e) => deleteMe(e,post._id)} */}
-                    <h1 className="postyContent">{post.content}</h1>
-                    <h2>{user.username}</h2>
+                    <h2 className="postyContent">{post.content}</h2>
+                    
                     <button type="submit" className="btn" id='DeleteME' >Delete</button>
                   </form>
                 </div>

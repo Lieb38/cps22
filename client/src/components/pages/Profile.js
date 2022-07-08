@@ -58,7 +58,7 @@ const Profile = () => {
     return(
         <div className="profile">
             
-            <h1>HI!!! {userName}! </h1>
+            {/* <h1>HI!!! {userName}! </h1> */}
             <hr />
             <div className="container">
                 <form className="profileForm" onSubmit={onSubmit}>
