@@ -135,14 +135,13 @@ html {
   border: solid 1px rgba(0, 0, 0, 0.789);
   border-radius: 10px;
   background-color:#b1d5a8;
-  box-shadow: 0px 0px 20px 20px #b1d5a8d8, 0px 0px 88px 34px rgb(166 207 210);
+  box-shadow: 0px 0px 20px 20px rgba(177, 213, 168, 0.847), 0px 0px 88px 34px rgb(166 207 210);
   /*  */
   text-shadow: 0 0 20px rgba(0, 0, 0, 0.558);
 }
 
-/* 
 .postForm.btn {
-  border: solid 1px black;
+  border: solid 1px rgb(151, 55, 55);
   border-radius: 10px;
-  color: black;
-} */
+  color: rgb(200 82 82);
+}
