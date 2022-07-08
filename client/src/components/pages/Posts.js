@@ -37,11 +37,11 @@ useEffect(() => {
 
           return(
                 <div key={post._id} id={`postContainer`} className='postContainer'>
-                  <form className="postForm mx-4 my-5" onSubmit={deleteMe}>
+                  <form className="postForm mx-auto my-5" onSubmit={deleteMe}>
                     {/* <h1>{user.username}</h1> */}
                     {/* onClick={() => deleteMe(post._id)} */}
                     {/* onSubmit={(e) => deleteMe(e,post._id)} */}
-                    <h2 className="postyContent">{post.username} says {post.content}`</h2>
+                    <h2 className="postyContent">{post.username} says {post.content}</h2>
                     
                     <button type="submit" className="btn" id='DeleteME' >Delete</button>
                   </form>

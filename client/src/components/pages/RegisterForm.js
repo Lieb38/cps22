@@ -43,7 +43,7 @@ const Register = () => {
     return(
         <div>
             <div className="container">
-                <form className="register" onSubmit={onSubmit}>
+                <form className="register mx-auto" onSubmit={onSubmit}>
                     <h1>Register</h1>
                 <div className="mx-4 my-4">
                    <label htmlFor="username" className="form-label">Username</label>

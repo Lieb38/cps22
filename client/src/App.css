@@ -68,6 +68,7 @@ html {
 
 
 .login, .register, .profileForm {
+  max-width: 20vw;
   padding-top: 1em;
   margin: 3em;
   margin-top: 2em;
@@ -121,6 +122,7 @@ html {
 /* posts form */
 
 .postForm {
+  max-width: 20vw;
   padding-top: 1em;
   padding-bottom: 1em;
   margin: 1em;
