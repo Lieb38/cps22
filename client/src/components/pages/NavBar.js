@@ -8,15 +8,13 @@ const NavBar = () => {
  
   const authenticated = (
     <Fragment>
-       <h2>hi, </h2>
-       <h2>{user.username}</h2>
+       <h2>hi, {user.username}</h2>
     </Fragment>
   )
 
   const guest = (
     <Fragment>
       <h2>welcome</h2>
-      <h2> </h2>
     </Fragment>
   
   )
@@ -45,8 +43,10 @@ const NavBar = () => {
         <div>
           <nav className="navbar navbar-expand-lg navbar-light">
             <div className="container-fluid">
+              <div className="text-left">
               {user.authenticated ? authenticated : guest }
-              <Link className="navbar-brand" to="/">LiebSpace</Link>
+              </div>
+              <Link className="navbar-brand mx-auto" to="/">LiebSpace</Link>
               <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
               </button>

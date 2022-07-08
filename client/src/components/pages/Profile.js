@@ -64,7 +64,7 @@ const Profile = () => {
             <div className="container">
                 <form className="profileForm mx-auto my-4" onSubmit={onSubmit}>
                     <h1>What's up?</h1>
-                <div className="non">
+                <div className="mx-4 my-4">
                    <label htmlFor="post" className="form-label">tell us</label>
                    <input 
                       type="text" 

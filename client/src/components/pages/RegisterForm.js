@@ -54,12 +54,11 @@ const Register = () => {
                       name="username" 
                       onChange={onChange}
                       value={username}
-                      aria-describedby="emailHelp"
                       required
                     />
                    {/* <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div> */}
                  </div>
-                 <div className="mx-4 my-4">
+                 <div className="non">
                    <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
                    <input 
                       type="password" 
@@ -71,7 +70,7 @@ const Register = () => {
                       required
                     />
                  </div>
-                 <div className="mx-4 my-4">
+                 <div className="non">
                    <label htmlFor="password2" className="form-label">Password check</label>
                    <input 
                       type="password" 
