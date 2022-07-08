@@ -140,8 +140,9 @@ html {
   text-shadow: 0 0 20px rgba(0, 0, 0, 0.558);
 }
 
-.postForm.btn {
+.deletebtn {
   border: solid 1px rgb(151, 55, 55);
+  text-shadow: 0 0 10px rgb(151, 55, 55);
   border-radius: 10px;
   color: rgb(200 82 82);
 }

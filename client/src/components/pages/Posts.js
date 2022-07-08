@@ -19,6 +19,7 @@ useEffect(() => {
       <div className="postsSection" id="postsSection">
 
         {posts.reverse().map(post => {
+          // deleteMe must be in posts.map to work for some reason
           const deleteMe = (e) => {
             e.preventDefault();
           
@@ -38,12 +39,8 @@ useEffect(() => {
           return(
                 <div key={post._id} id={`postContainer`} className='postContainer'>
                   <form className="postForm mx-auto my-4" onSubmit={deleteMe}>
-                    {/* <h1>{user.username}</h1> */}
-                    {/* onClick={() => deleteMe(post._id)} */}
-                    {/* onSubmit={(e) => deleteMe(e,post._id)} */}
                     <h2 className="postyContent">{post.username} says {post.content}</h2>
-                    
-                    <button type="submit" className="btn" id='DeleteME' >Delete</button>
+                    <button type="submit" className="deletebtn" id='DeleteME' >Delete</button>
                   </form>
                 </div>
           ) }
