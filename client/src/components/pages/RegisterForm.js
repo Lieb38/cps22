@@ -43,9 +43,9 @@ const Register = () => {
     return(
         <div>
             <div className="container">
-                <form className="register mx-auto" onSubmit={onSubmit}>
+                <form className="register mx-auto my-4" onSubmit={onSubmit}>
                     <h1>Register</h1>
-                <div className="mx-4 my-4">
+                <div className="non">
                    <label htmlFor="username" className="form-label">Username</label>
                    <input 
                       type="text" 

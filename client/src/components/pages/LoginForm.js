@@ -38,9 +38,9 @@ const Login = () => {
         <div>
             
             <div className="container mw-30">
-                <form className="login mx-4 my-5" onSubmit={onSubmit}>
+                <form className="login mx-auto my-5" onSubmit={onSubmit}>
                 <h1>Log In</h1>
-                 <div className="mx-4 my-4">
+                 <div className="non">
                    <label htmlFor="username" className="form-label">Username</label>
                    <input 
                     type="text"
