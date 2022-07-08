@@ -12,6 +12,10 @@ const Profile = () => {
     const userName = user.username;
     const userId = user._id;
 
+    useEffect(() => {
+        //Runs only on the first render
+      }, []);
+
     const createPost = () => {
         const newPost = document.getElementById('postsSection');
         //let posties = document.createElement('h1');
@@ -43,7 +47,7 @@ const Profile = () => {
         .then((data) => {
             if(!data.message) {
                 console.log(data)
-                createPost()
+                // createPost()
             }
         })
         .catch((error) => {

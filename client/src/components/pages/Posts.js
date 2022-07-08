@@ -1,64 +1,56 @@
 import React from 'react'
 import { fetchData, allPosts } from "../../main";
 import { useState, useEffect, useContext, createContext } from "react";
-//import { useNavigate, useLocation } from "react-router-dom";
 import UserContext from "../../context/userContext";
 
 export const Posts = () => {
-  const {user, updateUser} = useContext(UserContext);
+  const {user} = useContext(UserContext);
 
-  updateUser(user.username, user.username)
 
   const [posts, setPosts] = useState([]);
-
 
 useEffect(() => {
   fetch("/post/getPosts") // http://localhost:5000
   .then(response => response.json())
   .then(data => setPosts(data))
-},[])
-
-const deleteMe = (e, _id) => {
-  e.preventDefault();
-
-  fetchData('/post/delete', 
-        {
-        _id: _id
-        }, 
-      "DELETE")
-      .then((data) => {
-          if(!data.message) {
-              console.log(_id)
-              console.log(data)
-              // console.log(`success!!"`)
-              updateUser("authenticated", true)
-          }
-      })
-      .catch((error) => {
-          console.log(`Error! ${error.message}`)
-      })
-
-
-    //   fetch("/getPosts") // http://localhost:5000/post
-    // .then(response => response.json())
-    // .then(data => setPosts(data))
-}
+},[posts])
 
     return(
       <div className="postsSection" id="postsSection">
 
-                {posts.map(post => {
-                    return(
-                        <div key={post._id} id={`postContainer`} className='postContainer'>
-                          <form className="Posties" onSubmit={(e) => deleteMe(e,post._id)}>
-                            {/* onClick={() => deleteMe(post._id)} */}
-                            <h1 className="postyContent">{post.content}</h1>
-                            <h2>{user.username}</h2>
-                            <button type="submit" className="btn"  id='DeleteME' >Delete</button>
-                          </form>
-                        </div>
-                    )}
-                )}
+        {posts.reverse().map(post => {
+          const deleteMe = (e) => {
+            e.preventDefault();
+          
+            fetchData('/post/delete', 
+              {
+                id: post._id
+              }, 
+            "DELETE")
+            .then((data) => {
+                if(!data.message) {
+                    console.log(post._id)
+                    console.log(data)
+                    setPosts(posts)
+                }
+            })
+            .catch((error) => {
+                console.log(`Error! ${error.message}`)
+            })
+          }
+
+          return(
+                <div key={post._id} id={`postContainer`} className='postContainer'>
+                  <form className="Posties" onSubmit={deleteMe}>
+                    {/* onClick={() => deleteMe(post._id)} */}
+                    {/* onSubmit={(e) => deleteMe(e,post._id)} */}
+                    <h1 className="postyContent">{post.content}</h1>
+                    <h2>{user.username}</h2>
+                    <button type="submit" className="btn" id='DeleteME' >Delete</button>
+                  </form>
+                </div>
+          ) }
+          )}
       </div>
       
 

@@ -13,14 +13,6 @@ export async function fetchData(route ='', data={}, methodType) {
     }
 }
 
-export async function allPosts() {
-    await fetch("/post/getPosts") //http://localhost:5000
-    .then((response) => {
-    return response.json();
-    })
-
-}
-
 export const getPosts = async () => {
     await fetch("/post/getPosts", { // http://localhost:5000
         method: 'GET',
