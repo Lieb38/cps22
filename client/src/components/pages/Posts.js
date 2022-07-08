@@ -5,6 +5,7 @@ import UserContext from "../../context/userContext";
 
 export const Posts = () => {
   const {user} = useContext(UserContext);
+  const signedUser = user.username;
 
 
   const [posts, setPosts] = useState([]);
@@ -27,7 +28,7 @@ useEffect(() => {
             .then((data) => {
                 if(!data.message) {
                     // console.log(post._id)
-                    // console.log(data)
+                    console.log(signedUser)
                     setPosts(posts)
                 }
             })
@@ -40,7 +41,7 @@ useEffect(() => {
                 <div key={post._id} id={`postContainer`} className='postContainer'>
                   <form className="postForm mx-auto my-4" onSubmit={deleteMe}>
                     <h2 className="postyContent">{post.username} says {post.content}</h2>
-                    <button type="submit" className="btn" id='DeleteME' >Delete</button>
+                    <button type="submit" className="btn btn-outline-danger" id='DeleteME' >Delete</button>
                   </form>
                 </div>
           ) }
